@@ -1,0 +1,57 @@
+This script attempts to test entries to proggit challenge #4 for correctness.
+It's still a bit rough, but it's a start.  You can use it for whatever purpose
+you want, but only if you agree to not hold me accountable in any way for
+anything related to its use.
+
+
+Usage: 
+
+  ./bacon-eval.pl <input_dir> <binary_to_eval>
+
+     <input_dir> is a directory containing one or more sample input files. 
+
+     <binary_to_eval> must produce output in the following format:
+       Note: n = total distance, <row,cow> = bacon dispenser location (zero-based!)
+
+      n
+      row,col
+      row,col
+      ...
+      row,col
+
+
+Example:
+
+      7
+      4,4
+      5,1
+      2,4
+
+
+
+Successful Run Output:
+
+> ./bacon-eval.pl ../data/input-test idevelop.php
+Proggit challenge #4 solution evaluator v0.0.9
+
+Evaluating solution 'idevelop.php' with test dir '../data/input-test'...
+  Loading input samples...
+    Loaded sample: '../data/input-test/small-01'
+    Loaded sample: '../data/input-test/small-02'
+  Loaded all sample files
+
+  Results:
+    sample: '../data/input-test/small-02':
+         <n,m,b> -> <8,8,3>
+          p_map  -> <0,5> <2,2> <3,0> <6,0> <6,6> <7,5> 
+      eval_score -> 9
+       app_score -> 9
+           b_map -> <2,0> <6,5> <0,5> 
+
+    sample: '../data/input-test/small-01':
+         <n,m,b> -> <8,8,3>
+          p_map  -> <2,4> <2,5> <4,3> <6,1> <6,2> <6,4> 
+      eval_score -> 7
+       app_score -> 7
+           b_map -> <4,4> <5,1> <2,4> 
+
